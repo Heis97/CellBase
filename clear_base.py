@@ -26,13 +26,16 @@ b=[]
 c=[]
 
 d=[]
-for i3 in range(2):
+base_misis = [2,4,10,81]
+dimensions = base_misis
+
+for i3 in range(dimensions[0]):
     c=[]
-    for i2 in range(4):
+    for i2 in range(dimensions[1]):
         b=[]
-        for i1 in range(10):
+        for i1 in range(dimensions[2]):
             a=[]
-            for i in range(81):
+            for i in range(dimensions[3]):
                 a.append(['','','',''])           
             b.append(a)
         c.append(b)
