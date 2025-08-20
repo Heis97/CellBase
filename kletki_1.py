@@ -190,27 +190,23 @@ class MainWindow(QtWidgets.QWidget):
                 for i in range(left, right, +1):
                     datai=kletki[listk1[i][0][0]][listk1[i][0][1]][listk1[i][0][2]][listk1[i][0][3]][2]
                     datai=datai.split('.')
-                    if len(datai) >= 3:
-                        datais=int(datai[0])+(int(datai[1])-1)*30+int(datai[2])*360
-                        datai1=kletki[listk1[i+1][0][0]][listk1[i+1][0][1]][listk1[i+1][0][2]][listk1[i+1][0][3]][2]
-                        datai1=datai1.split('.')
-                        if len(datai1) >= 3:
-                            datai1s=int(datai1[0])+(int(datai1[1])-1)*30+int(datai1[2])*360
-                            if datais < datai1s:
-                                listk1[i], listk1[i + 1] = listk1[i + 1], listk1[i]
+                    datais=int(datai[0])+(int(datai[1])-1)*30+int(datai[2])*360
+                    datai1=kletki[listk1[i+1][0][0]][listk1[i+1][0][1]][listk1[i+1][0][2]][listk1[i+1][0][3]][2]
+                    datai1=datai1.split('.')
+                    datai1s=int(datai1[0])+(int(datai1[1])-1)*30+int(datai1[2])*360
+                    if datais < datai1s:
+                        listk1[i], listk1[i + 1] = listk1[i + 1], listk1[i]
                 right -= 1
 
                 for i in range(right, left, -1):
                     datai=kletki[listk1[i][0][0]][listk1[i][0][1]][listk1[i][0][2]][listk1[i][0][3]][2]
                     datai=datai.split('.')
-                    if len(datai) >= 3:
-                        datais=int(datai[0])+(int(datai[1])-1)*30+int(datai[2])*360
-                        datai2=kletki[listk1[i-1][0][0]][listk1[i-1][0][1]][listk1[i-1][0][2]][listk1[i-1][0][3]][2]
-                        datai2=datai2.split('.')
-                        if len(datai2) >= 3:
-                            datai2s=int(datai2[0])+(int(datai2[1])-1)*30+int(datai2[2])*360
-                            if datai2s < datais:
-                                listk1[i], listk1[i - 1] = listk1[i - 1], listk1[i]
+                    datais=int(datai[0])+(int(datai[1])-1)*30+int(datai[2])*360
+                    datai2=kletki[listk1[i-1][0][0]][listk1[i-1][0][1]][listk1[i-1][0][2]][listk1[i-1][0][3]][2]
+                    datai2=datai2.split('.')
+                    datai2s=int(datai2[0])+(int(datai2[1])-1)*30+int(datai2[2])*360
+                    if datai2s < datais:
+                        listk1[i], listk1[i - 1] = listk1[i - 1], listk1[i]
                 left += 1
                 #end--------------------------------------------------------
            
@@ -706,7 +702,7 @@ class MapWindow(QtWidgets.QWidget):
                     for i2 in range(10):
                         kletki[i][i1].append([])
                         for i3 in range(81):
-                            kletki[i][i1][i2].append([res[i][i1][i2][i3][0],res[i][i1][i2][i3][1],res[i][i1][i2][i3][2],res[i][i1][i2][i3][3]])
+                            kletki[i][i1][i2].append([res[i][i1][i2][i3][0],res[i][i1][i2][i3][1],res[i][i1][i2][i3][2],res[i][i1][i2][i3][3],"","",""])
                             if ppls.count(res[i][i1][i2][i3][3])==0 and res[i][i1][i2][i3][3]!='':
                                 ppls.append(res[i][i1][i2][i3][3])
                             if cellsline.count(res[i][i1][i2][i3][0])==0 and res[i][i1][i2][i3][0]!='':

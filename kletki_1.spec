@@ -5,7 +5,7 @@ block_cipher = None
 
 
 a = Analysis(['kletki_1.py'],
-             pathex=['C:\\kletki'],
+             pathex=['C:\\python38\\kletki'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -22,7 +22,7 @@ exe = EXE(pyz,
           a.binaries,
           a.zipfiles,
           a.datas,
-          name='Cell Base',
+          name='KUKA',
           debug=False,
           strip=False,
           upx=True,
